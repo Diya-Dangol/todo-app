@@ -4,7 +4,6 @@ import {Grid, TextField,IconButton, Button} from '@material-ui/core/';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 function Todo() {
-    // let {showtime} = props.ShowTime;
     const [todo, setTodo] = useState({
         task: '',
         time: "00:00",
@@ -48,20 +47,20 @@ function Todo() {
         let newTime = new Date();
         let hour = newTime.getHours();
         let min = newTime.getMinutes();
-        let sec = newTime.getSeconds();
+        // let sec = newTime.getSeconds();
         let day_night = "AM";
         if(hour > 12) {
             hour = hour - 12;
             day_night = "PM";
         }
-        if(hour == 0){
+        if(hour === 0){
             hour = 12;
             day_night ="AM";
         }
         
         hour = hour < 10 ? "0" + hour : hour; 
         min = min < 10 ? "0" + min : min; 
-        sec = sec < 10 ? "0" + sec : sec; 
+        // sec = sec < 10 ? "0" + sec : sec; 
         
         let currentTime = hour + ":" + min + " " +day_night; 
     
